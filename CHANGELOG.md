@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 — 2026-10-15
+
+- Use the English installation and usage guide as the primary README for Community directory review.
+- Keep the complete Chinese guide in README.zh-CN.md and include it in the installation package.
+- Add a screenshot sized for the Community directory. Runtime behavior is unchanged.
+
 ## 1.0.0 — 2026-10-15
 
 - Lock and unlock relative vertical scrolling between two independently positioned Markdown panes.

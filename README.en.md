@@ -2,7 +2,7 @@
 
 **Position two panes independently. Lock them in place. Scroll together.**
 
-[简体中文](README.md) · [Download](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest) · [Report an issue](https://github.com/v-49/obsidian-relative-scroll-lock/issues)
+[简体中文](README.zh-CN.md) · [Download](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest) · [Report an issue](https://github.com/v-49/obsidian-relative-scroll-lock/issues)
 
 Compare a source passage with a revision elsewhere in the same long note, or compare two different notes. Locking preserves both starting positions. Neither pane jumps to the other pane's location.
 
@@ -27,7 +27,7 @@ If the two panes are already natively linked, **clicking Lock removes their nati
 
 **Distributed through GitHub Releases; not yet listed in Obsidian Community Plugins.**
 
-1. Download `relative-scroll-lock-1.0.0.zip` from the [latest release](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest).
+1. Download `relative-scroll-lock-1.0.1.zip` from the [latest release](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest).
 2. Extract its `relative-scroll-lock` folder into your vault's plugin directory, normally `.obsidian/plugins/`. If you use a custom configuration directory, use its `plugins/` directory instead.
 3. Reload Obsidian and enable **Relative Scroll Lock** in Settings → Community plugins. Turn off Restricted mode if it is enabled.
 
