@@ -1,0 +1,10 @@
+{
+  "id": "relative-scroll-lock",
+  "name": "Relative Scroll Lock",
+  "version": "1.0.0",
+  "minAppVersion": "1.13.7",
+  "description": "Position two Markdown panes independently, then lock relative scrolling without jumping. Hold Alt to adjust one pane.",
+  "author": "v-49",
+  "authorUrl": "https://github.com/v-49",
+  "isDesktopOnly": true
+}
