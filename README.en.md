@@ -25,9 +25,13 @@ If the two panes are already natively linked, **clicking Lock removes their nati
 
 ## Install
 
-**Distributed through GitHub Releases; not yet listed in Obsidian Community Plugins.**
+**Available in [Obsidian Community Plugins](https://community.obsidian.md/plugins/relative-scroll-lock).**
 
-1. Download `relative-scroll-lock-1.0.1.zip` from the [latest release](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest).
+In Obsidian, open Settings → Community plugins → Browse, search for **Relative Scroll Lock**, install, and enable it. You can also open the community page and select **Add to Obsidian**.
+
+### Manual installation
+
+1. Download `relative-scroll-lock-1.0.2.zip` from the [latest release](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest).
 2. Extract its `relative-scroll-lock` folder into your vault's plugin directory, normally `.obsidian/plugins/`. If you use a custom configuration directory, use its `plugins/` directory instead.
 3. Reload Obsidian and enable **Relative Scroll Lock** in Settings → Community plugins. Turn off Restricted mode if it is enabled.
 

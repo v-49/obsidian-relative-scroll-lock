@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 — 2026-10-15
+
+- Add the published Community Plugins listing and in-app installation instructions to the English and Chinese guides. Runtime behavior is unchanged.
+
 ## 1.0.1 — 2026-10-15
 
 - Use the English installation and usage guide as the primary README for Community directory review.

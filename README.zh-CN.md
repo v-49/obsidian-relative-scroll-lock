@@ -38,9 +38,13 @@
 
 ## 安装
 
-**目前通过 GitHub Releases 分发，尚未上架 Obsidian 社区插件库。**
+**已上架 [Obsidian 社区插件库](https://community.obsidian.md/plugins/relative-scroll-lock)。**
 
-1. 打开 [最新发布页](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest)，下载 `relative-scroll-lock-1.0.1.zip`。
+在 Obsidian 中打开「设置 → 第三方插件 → 浏览」，搜索 **Relative Scroll Lock**，安装并启用。也可打开社区页面，点击 **Add to Obsidian**。
+
+### 手动安装
+
+1. 打开 [最新发布页](https://github.com/v-49/obsidian-relative-scroll-lock/releases/latest)，下载 `relative-scroll-lock-1.0.2.zip`。
 2. 解压，将里面的 `relative-scroll-lock` 文件夹放入知识库的插件目录。默认位置为 `.obsidian/plugins/`；如果改过配置目录，请使用实际配置目录下的 `plugins/`。
 3. 确认目录结构如下，然后重新加载 Obsidian。
 4. 在「设置 → 第三方插件」中启用 **Relative Scroll Lock**。如果受限模式已开启，需要先关闭受限模式。
