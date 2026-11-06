@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Keep the offset set at lock time when one pane reaches its top or bottom. Previously, scrolling past the end of the shorter note and back moved the panes out of alignment; now the clamped pane stays put until the other pane returns inside the locked range, and the pair realigns exactly. Alt adjustments still set a new offset.
+
 ## 1.0.2 — 2026-10-15
 
 - Add the published Community Plugins listing and in-app installation instructions to the English and Chinese guides. Runtime behavior is unchanged.

@@ -37,6 +37,10 @@ class RelativeScrollSession {
     this.onState = onState;
     this.onInvalid = onInvalid;
     this.positions = panes.map((pane) => pane.scrollTop);
+    // The locked relationship: pane 1 should sit `offset` pixels below pane 0.
+    // Followers are placed from this offset (then clamped), not from their own
+    // possibly clamped position, so the pair realigns after an edge is hit.
+    this.offset = this.positions[1] - this.positions[0];
     this.disposers = [];
     this.alt = false;
     this.independent = panes.map(() => ({ until: 0, enabled: false }));
@@ -83,13 +87,19 @@ class RelativeScrollSession {
     this.positions[index] = source.scrollTop;
     const gesture = this.independent[index];
     const independent = this.alt || (gesture.enabled && Date.now() < gesture.until);
-    if (this.propagating || independent || Math.abs(delta) < 0.01) return;
+    if (this.propagating || Math.abs(delta) < 0.01) return;
+    if (independent) {
+      // Alt adjustment: what the user sees now becomes the new locked offset.
+      this.offset = this.positions[1] - this.positions[0];
+      return;
+    }
     const targetIndex = 1 - index;
     const target = this.panes[targetIndex];
     const max = Math.max(0, target.scrollHeight - target.clientHeight);
+    const wanted = index === 0 ? source.scrollTop + this.offset : source.scrollTop - this.offset;
     this.propagating = true;
     try {
-      target.scrollTop = Math.min(max, Math.max(0, target.scrollTop + delta));
+      target.scrollTop = Math.min(max, Math.max(0, wanted));
       // Update before the asynchronously dispatched scroll event. Its echo
       // then has zero delta, preventing recursion and bounce at boundaries.
       this.positions[targetIndex] = target.scrollTop;

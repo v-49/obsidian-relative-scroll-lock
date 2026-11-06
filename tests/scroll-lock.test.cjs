@@ -105,6 +105,46 @@ test('top and bottom clamping does not bounce or block the source', () => {
   f.scroll(0, 6100);
   assert.equal(f.panes[1].scrollTop, 9300);
   f.scroll(0, 6000);
+  assert.equal(f.panes[1].scrollTop, 9300, 'stays clamped until the source returns inside the locked range');
+  f.scroll(0, 5000);
+  assert.equal(f.panes[1].scrollTop, 9200);
+  f.plugin.onunload();
+});
+
+test('offset set at lock survives hitting the bottom of one pane', () => {
+  const f = fixture();
+  f.plugin.toggle();
+  // Offset 4200: the right pane reaches its bottom (9300) when the left is at 5100.
+  f.scroll(0, 8000);
+  assert.equal(f.panes[1].scrollTop, 9300);
+  f.panes[1].dispatchEvent(new f.dom.window.Event('scroll'));
+  f.scroll(0, 1200);
+  assert.equal(f.panes[1].scrollTop, 5400, 'scrolling back restores the anchored pair');
+  f.plugin.onunload();
+});
+
+test('offset set at lock survives hitting the top of one pane', () => {
+  const f = fixture();
+  f.plugin.toggle();
+  f.scroll(1, 1000);
+  assert.equal(f.panes[0].scrollTop, 0);
+  f.panes[0].dispatchEvent(new f.dom.window.Event('scroll'));
+  f.scroll(1, 5400);
+  assert.equal(f.panes[0].scrollTop, 1200, 'scrolling back restores the anchored pair');
+  f.plugin.onunload();
+});
+
+test('Alt adjustment while one pane is clamped re-anchors at the visible positions', () => {
+  const f = fixture();
+  f.plugin.toggle();
+  f.scroll(0, 8000);
+  assert.equal(f.panes[1].scrollTop, 9300);
+  f.wheel(0, true);
+  f.scroll(0, 7000);
+  assert.equal(f.panes[1].scrollTop, 9300);
+  f.dom.window.dispatchEvent(new f.dom.window.KeyboardEvent('keyup', { key: 'Alt', altKey: false }));
+  f.wheel(0, false);
+  f.scroll(0, 6900);
   assert.equal(f.panes[1].scrollTop, 9200);
   f.plugin.onunload();
 });
